@@ -1,20 +1,22 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
-import { View } from "@vkontakte/vkui";
 import "@vkontakte/vkui/dist/vkui.css";
-import TestComponent from "./TestComponent";
-
-import Home from "./panels/Home";
-import Persik from "./panels/Persik";
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activePanel: "home",
+      activePanel: "login",
       fetchedUser: null
     };
+  }
+
+  pagination(page) {
+    this.setState({
+      activePanel: page
+    });
+    console.log(this.state.activePanel);
   }
 
   componentDidMount() {
@@ -33,15 +35,8 @@ class App extends React.Component {
   go = e => {
     this.setState({ activePanel: e.currentTarget.dataset.to });
   };
-
   render() {
-    return (
-      <View activePanel={this.state.activePanel}>
-        <Home id="home" fetchedUser={this.state.fetchedUser} go={this.go} />
-        <Persik id="persik" go={this.go} />
-        <TestComponent />
-      </View>
-    );
+    return <div>HEllo world</div>;
   }
 }
 
