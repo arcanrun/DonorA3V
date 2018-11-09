@@ -7,6 +7,7 @@ liekocites = "https://developer.donorsearch.org/design_elements/dropplets/liekoc
 in_review = "https://developer.donorsearch.org/design_elements/dropplets/in_review.svg"
 plazma = "https://developer.donorsearch.org/design_elements/dropplets/plazma.svg"
 trombocites = "https://developer.donorsearch.org/design_elements/dropplets/trombocites.svg"
+logo = "https://developer.donorsearch.org/design_elements/dropplets/dropplet.svg"
 
 blood-icon(icon, w = 100, h = 0)
     width: unit(w, 'px')
@@ -16,6 +17,9 @@ blood-icon(icon, w = 100, h = 0)
     background-size: auto auto
     background-image: url(icon)
     background-repeat: no-repeat
+
+#logo-icon
+    blood-icon(logo)
 
 #full-blood-icon
     blood-icon(full_blood)

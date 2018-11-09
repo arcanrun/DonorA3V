@@ -38,7 +38,7 @@ class App extends React.Component {
     this.setState({ activePanel: e.currentTarget.dataset.to });
   };
   render() {
-    return <div>HEllo world</div>;
+    return <div id="logo-icon"></div>;
   }
 }
 

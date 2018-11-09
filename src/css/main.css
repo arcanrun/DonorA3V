@@ -1,3 +1,12 @@
+#logo-icon {
+  width: 100px;
+  height: 100px;
+  display: block;
+  background-position: center center;
+  background-size: auto auto;
+  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/dropplet.svg");
+  background-repeat: no-repeat;
+}
 #full-blood-icon {
   width: 100px;
   height: 100px;
