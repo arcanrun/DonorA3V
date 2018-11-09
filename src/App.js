@@ -1,8 +1,10 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
 import "@vkontakte/vkui/dist/vkui.css";
+import { Root } from "@vkontakte/vkui";
 
-import "./css/main.css"
+import VerifyView from "./views/VerifyView";
+import "./css/main.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -38,7 +40,11 @@ class App extends React.Component {
     this.setState({ activePanel: e.currentTarget.dataset.to });
   };
   render() {
-    return <div id="logo-icon"></div>;
+    return (
+      <Root activeView="verify">
+        <VerifyView id="verify" />
+      </Root>
+    );
   }
 }
 
