@@ -2,6 +2,8 @@ import React from "react";
 import connect from "@vkontakte/vkui-connect";
 import "@vkontakte/vkui/dist/vkui.css";
 
+import "./css/main.css"
+
 class App extends React.Component {
   constructor(props) {
     super(props);

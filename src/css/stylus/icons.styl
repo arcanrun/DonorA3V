@@ -1,0 +1,39 @@
+// main: main.styl
+
+full_blood = "https://developer.donorsearch.org/design_elements/dropplets/full_blood.svg"
+eritocites = "https://developer.donorsearch.org/design_elements/dropplets/eritocites.svg"
+granulocites = "https://developer.donorsearch.org/design_elements/dropplets/granulocites.svg"
+liekocites = "https://developer.donorsearch.org/design_elements/dropplets/liekocites.svg"
+in_review = "https://developer.donorsearch.org/design_elements/dropplets/in_review.svg"
+plazma = "https://developer.donorsearch.org/design_elements/dropplets/plazma.svg"
+trombocites = "https://developer.donorsearch.org/design_elements/dropplets/trombocites.svg"
+
+blood-icon(icon, w = 100, h = 0)
+    width: unit(w, 'px')
+    height:  unit((h || w), 'px')
+    display: block
+    background-position: center center
+    background-size: auto auto
+    background-image: url(icon)
+    background-repeat: no-repeat
+
+#full-blood-icon
+    blood-icon(full_blood)
+
+#eritocites-icon
+    blood-icon(eritocites)
+
+#granulocites-icon
+    blood-icon(granulocites)
+
+#liekocites-icon
+    blood-icon(liekocites)
+
+#in-review-icon
+    blood-icon(in_review)
+
+#plazma-icon
+    blood-icon(plazma)
+
+#trombocites-icon
+    blood-icon(trombocites)
