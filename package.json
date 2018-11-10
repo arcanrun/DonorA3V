@@ -3,9 +3,12 @@
     "version": "1.0.0",
     "description": "",
     "main": "index.js",
+    "homepage": "https://arcanrun.github.io/DonorA3V/",
     "scripts": {
         "start": "cross-env PORT=10888 react-scripts start",
-        "build": "react-scripts build"
+        "build": "react-scripts build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d build"
     },
     "keywords": [],
     "author": "",
@@ -19,9 +22,18 @@
         "@vkontakte/icons": "^1.2.1",
         "@vkontakte/vkui": "^2.13.0",
         "@vkontakte/vkui-connect": "^1.1.2",
+        "@vkontakte/vkui-connect-mock": "^1.0.5",
+        "apollo-boost": "^0.1.20",
+        "apollo-client-preset": "^1.0.8",
         "core-js": "^2.5.7",
+        "graphql": "^14.0.2",
+        "graphql-tag": "^2.10.0",
         "prop-types": "^15.6.2",
         "react": "^16.5.0",
-        "react-dom": "^16.5.0"
+        "react-apollo": "^2.2.4",
+        "react-dom": "^16.5.0",
+        "react-router-dom": "^4.3.1",
+        "react-yandex-maps": "^3.0.2",
+        "yandex-map-react": "^1.1.1"
     }
 }

@@ -9,20 +9,25 @@ plazma = "https://developer.donorsearch.org/design_elements/dropplets/plazma.svg
 trombocites = "https://developer.donorsearch.org/design_elements/dropplets/trombocites.svg"
 logo = "https://developer.donorsearch.org/dropplet.svg"
 
-blood-icon(icon, w = 100, h = 0)
+blood-icon(icon, w = 100, h = 100)
     width: unit(w, 'px')
-    height:  unit((h || w), 'px')
+    height: unit(h, 'px')
     display: block
     background-position: center center
-    background-size: auto auto
+    background-size: cover
     background-image: url(icon)
     background-repeat: no-repeat
 
 #logo-icon
-    blood-icon(logo)
+    blood-icon(logo, 50, 50)
 
 #full-blood-icon
-    blood-icon(full_blood)
+    height: 120px
+    display: block
+    background-position: center center
+    background-size: 75px auto
+    background-image: url(full_blood)
+    background-repeat: no-repeat
 
 #eritocites-icon
     blood-icon(eritocites)
