@@ -1,26 +1,29 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
 import "@vkontakte/vkui/dist/vkui.css";
-import { Root } from "@vkontakte/vkui";
+import { Root, View, Panel  } from '@vkontakte/vkui';
+import Data3Panel from "./panels/Data3Panel"
+import RegPanel from "./panels/RegPanel"
 
-import VerifyView from "./views/VerifyView";
-import "./css/main.css";
+
+
+import "./css/main.css"
 
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activePanel: "login",
+      activeView: "verify-view",
+      activePanel: "data-panel",
       fetchedUser: null
     };
   }
 
   pagination(page) {
     this.setState({
-      activePanel: page
+      activeView: page
     });
-    console.log(this.state.activePanel);
   }
 
   componentDidMount() {
@@ -37,14 +40,17 @@ class App extends React.Component {
   }
 
   go = e => {
-    this.setState({ activePanel: e.currentTarget.dataset.to });
+    this.setState({ activeView: e.currentTarget.dataset.to });
   };
+
   render() {
     return (
-      <Root activeView="verify">
-        <VerifyView id="verify" />
-      </Root>
-    );
+    	<Root activeView="verify-view">
+		 	<View id="verify-view" activePanel="data3-panel">
+		 		<Data3Panel id="data3-panel" />
+		 	</View>
+		</Root>
+    	);
   }
 }
 
