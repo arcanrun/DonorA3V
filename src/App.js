@@ -2,7 +2,9 @@ import React from "react";
 import connect from "@vkontakte/vkui-connect";
 import VKConnect from "@vkontakte/vkui-connect-mock";
 import "@vkontakte/vkui/dist/vkui.css";
-import { Root } from "@vkontakte/vkui";
+import { Root, View, Panel } from "@vkontakte/vkui";
+import Data3Panel from "./panels/Data3Panel";
+import RegPanel from "./panels/RegPanel";
 
 import VerifyView from "./views/VerifyView";
 import EntranceView from "./views/EnrtranceView";
