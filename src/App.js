@@ -27,10 +27,7 @@ class App extends React.Component {
         this.setState({
             activeView: view
         });
-
-        console.log(this.state.activeView);
     }
-
 
     pagination(page) {
         this.setState({
@@ -57,11 +54,12 @@ class App extends React.Component {
     };
 
     render() {
+        console.log(this.state.fetchedUser)
         return (
             <Root activeView={this.state.activeView} >
                 <EntranceView id="entrance" dataUser={this.state.fetchedUser} go={this.changeView} />
-                <VerifyView id="verify" />
-                <MainView id="main-view" />
+                <VerifyView id="verify" dataUser={this.state.fetchedUser} />
+                <MainView id="main-view" dataUser={this.state.fetchedUser} />
             </Root>
         );
     }

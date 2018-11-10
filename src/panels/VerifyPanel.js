@@ -1,108 +1,38 @@
 import React from "react";
-import VKConnect from "@vkontakte/vkui-connect-mock";
 
-import "@vkontakte/vkui/dist/vkui.css";
-import {
-  Panel,
-  PanelHeader,
-  Avatar,
-  Group,
-  Cell,
-  Button,
-  Div,
-  colors
-} from "@vkontakte/vkui";
+import { Panel, PanelHeader, Avatar, Group, Cell, Button, Div } from "@vkontakte/vkui";
 
 class VerifyPanel extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = { fetchedUser: "changeit" };
-  }
-
-  componentDidMount() {
-    this.setState({ fetchedUser: this.state.fetchedUser });
-    console.log(this.state.fetchedUser);
-  }
-
-  componentWillMount() {
-    VKConnect.subscribe(e => {
-      switch (e.detail.type) {
-        case "VKWebAppGetUserInfoResult":
-          this.setState({ fetchedUser: e.detail.data });
-          break;
-        default:
-      }
-    });
-
-    VKConnect.send("VKWebAppGetUserInfo", {});
-    // console.log(this.state.test);
-  }
-  render() {
-    // this.setState({ fetchedUser: null });
-    // console.log(this.state.fetchedUser);
-    // console.log("---" + !this.state.fetchedUser);
-    if (!this.state.fetchedUser) {
-      return (
-        <Panel id={this.props.id}>
-          <PanelHeader style={{ backgroundColor: colors.red_light }}>
-            <span id="logo-icon" />
-          </PanelHeader>
-          <Group title="Подтверждение личности">
-            <Div>
-              К сожалению, мы не смогли вас распознать. Авторизуйтесь, чтобы
-              продолжить
-            </Div>
-            <Div>
-              <Div style={{ display: "flex" }}>
-                <Button
-                  size="l"
-                  stretched
-                  style={{ marginRight: 8 }}
-                  onClick={this.props.go.bind(this, "regPanel")}
-                >
-                  Авторизоваться
-                </Button>
-              </Div>
-            </Div>
-          </Group>
-        </Panel>
-      );
+    render() {
+        return (
+            <Panel id={this.props.id}>
+                <PanelHeader theme="light">
+                    <div className="header-logo"></div>
+                    <b>DonorSearch</b>
+                </PanelHeader>
+                <Group title="Подтверждение личности">
+                    <Cell before={<Avatar src={this.props.dataUser.photo_100} />}>
+                        <b>{this.props.dataUser.first_name}</b>
+                    </Cell>
+                    <Div>Мы нуждаемся в реальных донорах и хотим чтобы вы подтвердили свои данные.</Div>
+                    <Div style={{ display: "flex" }}>
+                        <Button
+                            size="l"
+                            stretched
+                            style={{ marginRight: 10 }}
+                            onClick={this.props.go.bind(this, "detection-panel")}
+                        >Подтверждаю</Button>
+                        <Button
+                            size="l"
+                            stretched
+                            level="secondary"
+                            onClick={this.props.go.bind(this, "change-panel")}
+                        >Изменить</Button>
+                    </Div>
+                </Group>
+            </Panel>
+        );
     }
-    const avatar_src = this.state.fetchedUser.photo_200;
-    const first_name = this.state.fetchedUser.first_name;
-
-    return (
-      <Panel id={this.props.id}>
-        <PanelHeader style={{ backgroundColor: colors.red_light }}>
-          <span id="logo-icon" />
-        </PanelHeader>
-        <Group title="Подтверждение личности">
-          <Cell before={<Avatar src={avatar_src} />}>{first_name}</Cell>
-          <Div>Подвердите что это вы, для дальнейшей работы</Div>
-          <Div>
-            <Div style={{ display: "flex" }}>
-              <Button
-                size="l"
-                stretched
-                style={{ marginRight: 8 }}
-                onClick={this.props.go.bind(this, "donorSearchDetection")}
-              >
-                Подтверждаю
-              </Button>
-              <Button
-                size="l"
-                stretched
-                level="secondary"
-                onClick={this.props.go.bind(this, "regPanel")}
-              >
-                Изменить данные
-              </Button>
-            </Div>
-          </Div>
-        </Group>
-      </Panel>
-    );
-  }
 }
 
 export default VerifyPanel;
