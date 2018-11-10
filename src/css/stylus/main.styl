@@ -1,4 +1,4 @@
-// out: common.css, compress: true, libs: nib
+// out: ../main.css, compress: false
 
 @import "colors.styl"
 @import "icons.styl"
@@ -31,3 +31,16 @@ body
     background-repeat: no-repeat
     background-position: center center
     background-image: linear-gradient(to left, rgba(255,255,255,0) 45%, rgba(255,255,255,.6)), url(../img/bg-entrance.webp)
+
+.Button--lvl-primary
+    background-color: red-color !important
+
+.Input-underline::before, .Select-underline::before, .Textarea-underline::before
+    background: red-color !important
+
+.HeaderButton--android .Icon--24,
+.TabbarItem--selected
+    color: red-color !important
+
+.TabbarItem__label
+    background: blue-color !important

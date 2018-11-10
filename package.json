@@ -25,16 +25,18 @@
         "@vkontakte/vkui-connect-mock": "^1.0.5",
         "apollo-boost": "^0.1.20",
         "apollo-client-preset": "^1.0.8",
+        "bootstrap": "^4.1.3",
         "core-js": "^2.5.7",
         "graphql": "^14.0.2",
         "graphql-tag": "^2.10.0",
         "prop-types": "^15.6.2",
-        "react": "^16.5.0",
+        "react": "^16.6.1",
         "react-apollo": "^2.2.4",
-        "react-dom": "^16.5.0",
+        "react-dom": "^16.6.1",
         "react-phone-number-input": "^2.2.16",
         "react-router-dom": "^4.3.1",
         "react-yandex-maps": "^3.0.2",
+        "reactstrap": "^6.5.0",
         "yandex-map-react": "^1.1.1"
     }
 }

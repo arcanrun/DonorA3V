@@ -10,29 +10,23 @@ import { Root } from "@vkontakte/vkui";
 import MainView from "./views/MainView"
 import VerifyView from "./views/VerifyView";
 import EntranceView from "./views/EnrtranceView";
-import NewcardView from "./views/NewcardView";
 
 class App extends React.Component {
     constructor(props) {
         super(props);
 
         this.state = {
-            activeView: "entrance",
+            // activeView: "entrance-view",
+            activeView: "main-view",
             fetchedUser: null
         };
 
-        this.changeView = this.changeView.bind(this);
+        this.pagination = this.pagination.bind(this);
     }
 
-    changeView(view) {
+    pagination(view) {
         this.setState({
             activeView: view
-        });
-    }
-
-    pagination(page) {
-        this.setState({
-            activeView: page
         });
     }
 
@@ -58,23 +52,19 @@ class App extends React.Component {
         return (
             <Root activeView={ this.state.activeView } >
                 <EntranceView
-                    id="entrance"
+                    id="entrance-view"
                     dataUser={ this.state.fetchedUser }
-                    go={ this.changeView }
+                    pagination={ this.pagination }
                 />
                 <VerifyView
-                    id="verify"
+                    id="verify-view"
                     dataUser={ this.state.fetchedUser }
-                    gow={ this.changeView }
-                />
-                <NewcardView
-                    id="newcard-view"
-                    dataUser={ this.state.fetchedUser }
-                    gow={ this.changeView }
+                    pagination={ this.pagination }
                 />
                 <MainView
                     id="main-view"
                     dataUser={ this.state.fetchedUser }
+                    pagination={ this.pagination }
                 />
             </Root>
         );

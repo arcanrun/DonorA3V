@@ -25,3 +25,18 @@ body {
   background-position: center center;
   background-image: linear-gradient(to left, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6)), url("../img/bg-entrance.webp");
 }
+.Button--lvl-primary {
+  background-color: #cf3a42 !important;
+}
+.Input-underline::before,
+.Select-underline::before,
+.Textarea-underline::before {
+  background: #cf3a42 !important;
+}
+.HeaderButton--android .Icon--24,
+.TabbarItem--selected {
+  color: #cf3a42 !important;
+}
+.TabbarItem__label {
+  background: #3d70c1 !important;
+}

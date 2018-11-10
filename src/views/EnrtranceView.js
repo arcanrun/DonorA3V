@@ -17,7 +17,7 @@ class EntranceView extends React.Component {
                             Добро пожаловать, {this.props.dataUser.first_name}!
                         </h3>
                         <div>
-                            Здесь вы молниеносно найдете нужные вам пункты приема доноров крови и
+                            Здесь вы найдете нужные вам пункты приема доноров крови и
                             сможете планировать свои донации. А еще будете получать оповещения о
                             ближайших к вам мест, где помочь сможете именно вы!
                         </div>
@@ -28,7 +28,7 @@ class EntranceView extends React.Component {
                         <Button
                             style={{ marginTop: "15px" }}
                             size="xl"
-                            onClick={this.props.go.bind(this, "verify")}>
+                            onClick={this.props.pagination.bind(this, "verify-view")}>
                             Вперёд!
                         </Button>
                     </Div>

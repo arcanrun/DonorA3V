@@ -12,10 +12,10 @@ class IsDonorPanel extends React.Component {
                 </PanelHeader>
                 <Group>
                     <Div style={{ display: "flex" }}>
-                        <CellButton onClick={ this.props.go.bind(this, "main-view") }>
+                        <CellButton onClick={ this.props.pagination.bind(this, "main-view") }>
                             Я являюсь донором
                         </CellButton>
-                        <CellButton onClick={this.props.go.bind(this, "newcard-view")}>
+                        <CellButton onClick={ this.props.next.bind(this, "carddata-panel") }>
                             Я хочу стать донором
                         </CellButton>
                     </Div>

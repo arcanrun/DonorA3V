@@ -36,7 +36,7 @@ class ChangePanel extends React.Component {
             <Panel id={ this.props.id } theme="white">
                 <PanelHeader
                     left={
-                        <HeaderButton onClick={ this.props.go.bind(this, "verify-panel") }>
+                        <HeaderButton onClick={ this.props.back.bind(this) }>
                             { osname === IOS ? <Icon28ChevronBack /> : <Icon24Back /> }
                         </HeaderButton>
                     }
@@ -62,7 +62,7 @@ class ChangePanel extends React.Component {
                     />
                     <Button
                         size="xl"
-                        onClick={ this.props.go.bind(this, "isdonor-panel") }
+                        onClick={ this.props.next.bind(this, "isdonor-panel") }
                     >Сохранить</Button>
                 </FormLayout>
             </Panel>

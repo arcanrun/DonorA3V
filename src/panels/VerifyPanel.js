@@ -20,13 +20,13 @@ class VerifyPanel extends React.Component {
                             size="l"
                             stretched
                             style={{ marginRight: 10 }}
-                            onClick={ this.props.go.bind(this, "detection-panel") }
+                            onClick={ this.props.next.bind(this, "detection-panel") }
                         >Подтверждаю</Button>
                         <Button
                             size="l"
                             stretched
                             level="secondary"
-                            onClick={ this.props.go.bind(this, "change-panel") }
+                            onClick={ this.props.next.bind(this, "change-panel") }
                         >Изменить</Button>
                     </Div>
                 </Group>

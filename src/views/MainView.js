@@ -3,12 +3,14 @@ import { View, Epic, Panel, Tabbar, TabbarItem, PanelHeader } from '@vkontakte/v
 
 import Icon28Favorite from '@vkontakte/icons/dist/28/favorite';
 import Icon28Place from '@vkontakte/icons/dist/28/place';
-import Icon28HelpOutline from '@vkontakte/icons/dist/28/help_outline';
+import Icon28Search from '@vkontakte/icons/dist/28/search';
 import Icon28Notifications from '@vkontakte/icons/dist/28/notifications';
 import Icon28User from '@vkontakte/icons/dist/28/user';
 
 import MapPanel from "../panels/MapPanel"
 import AccountPanel from "../panels/AccountPanel"
+
+import db from "../db.js"
 
 class MapView extends React.Component {
     constructor(props) {
@@ -44,13 +46,13 @@ class MapView extends React.Component {
                         onClick={this.onStoryChange}
                         selected={this.state.activeStory === 'map'}
                         data-story="map"
-                        label="5"
+                        label={ db.data.cities[0].blood_stations.length}
                     ><Icon28Place /></TabbarItem>
                     <TabbarItem
                     onClick={this.onStoryChange}
-                            selected={this.state.activeStory === 'help'}
-                        data-story="help"
-                    ><Icon28HelpOutline /></TabbarItem>
+                        selected={this.state.activeStory === 'search'}
+                        data-story="search"
+                    ><Icon28Search /></TabbarItem>
                     <TabbarItem
                         onClick={this.onStoryChange}
                         selected={this.state.activeStory === 'account'}
@@ -63,9 +65,9 @@ class MapView extends React.Component {
                         <PanelHeader>Избранное</PanelHeader>
                     </Panel>
                 </View>
-                <View id="help" activePanel="help">
-                    <Panel id="help">
-                        <PanelHeader>Помощь</PanelHeader>
+                <View id="search" activePanel="search">
+                    <Panel id="search">
+                        <PanelHeader>Поиск</PanelHeader>
                     </Panel>
                 </View>
                 <View id="map" activePanel="map">
