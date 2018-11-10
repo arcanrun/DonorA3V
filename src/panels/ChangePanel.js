@@ -62,7 +62,7 @@ class ChangePanel extends React.Component {
                     />
                     <Button
                         size="xl"
-                        onClick={this.props.go.bind(this, "detection-panel")}
+                        onClick={ this.props.go.bind(this, "isdonor-panel") }
                     >Сохранить</Button>
                 </FormLayout>
             </Panel>

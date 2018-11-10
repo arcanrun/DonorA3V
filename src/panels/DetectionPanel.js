@@ -5,7 +5,7 @@ import { Panel, PanelHeader, Group, Div, Link,Button } from "@vkontakte/vkui";
 class DetectionPanel extends React.Component {
     render() {
         return (
-            <Panel id={this.props.id}>
+            <Panel id={ this.props.id }>
                 <PanelHeader theme="light">
                     <div className="header-logo"></div>
                     <b>DonorSearch</b>

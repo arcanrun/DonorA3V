@@ -5,14 +5,14 @@ import { Panel, PanelHeader, Avatar, Group, Cell, Button, Div } from "@vkontakte
 class VerifyPanel extends React.Component {
     render() {
         return (
-            <Panel id={this.props.id}>
+            <Panel id={ this.props.id }>
                 <PanelHeader theme="light">
                     <div className="header-logo"></div>
                     <b>DonorSearch</b>
                 </PanelHeader>
                 <Group title="Подтверждение личности">
-                    <Cell before={<Avatar src={this.props.dataUser.photo_100} />}>
-                        <b>{this.props.dataUser.first_name}</b>
+                    <Cell before={<Avatar src={ this.props.dataUser.photo_100 } />}>
+                        <b>{ this.props.dataUser.first_name }</b>
                     </Cell>
                     <Div>Мы нуждаемся в реальных донорах и хотим чтобы вы подтвердили свои данные.</Div>
                     <Div style={{ display: "flex" }}>
@@ -20,13 +20,13 @@ class VerifyPanel extends React.Component {
                             size="l"
                             stretched
                             style={{ marginRight: 10 }}
-                            onClick={this.props.go.bind(this, "detection-panel")}
+                            onClick={ this.props.go.bind(this, "detection-panel") }
                         >Подтверждаю</Button>
                         <Button
                             size="l"
                             stretched
                             level="secondary"
-                            onClick={this.props.go.bind(this, "change-panel")}
+                            onClick={ this.props.go.bind(this, "change-panel") }
                         >Изменить</Button>
                     </Div>
                 </Group>

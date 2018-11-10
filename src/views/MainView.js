@@ -15,7 +15,7 @@ class MapView extends React.Component {
         super(props);
 
         this.state = {
-            activeStory: "account"
+            activeStory: "map"
         };
 
         this.onStoryChange = this.onStoryChange.bind(this);

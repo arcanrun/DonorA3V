@@ -1,8 +1,5 @@
 import React from "react";
 
-import gql from 'graphql-tag';
-import { graphql } from 'react-apollo';
-
 import { YMaps, Map } from 'react-yandex-maps';
 import { Panel, PanelHeader } from '@vkontakte/vkui';
 
@@ -27,8 +24,6 @@ class MapPanel extends React.Component {
     }
 
     render() {
-        console.log(this.props)
-
         return (
             <Panel id={this.props.id}>
                 <PanelHeader>
@@ -47,14 +42,4 @@ class MapPanel extends React.Component {
     }
 }
 
-const repoQuery = gql`
-    query {
-        blood_stations {
-           	title
-         }
-    }
-`
-
-const MapPanelWithData = graphql(repoQuery, {})(MapPanel)
-
-export default MapPanelWithData;
+export default MapPanel;

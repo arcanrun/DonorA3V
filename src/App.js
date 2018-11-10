@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 
 import VKConnect from '@vkontakte/vkui-connect-mock';
 
@@ -10,6 +10,7 @@ import { Root } from "@vkontakte/vkui";
 import MainView from "./views/MainView"
 import VerifyView from "./views/VerifyView";
 import EntranceView from "./views/EnrtranceView";
+import NewcardView from "./views/NewcardView";
 
 class App extends React.Component {
     constructor(props) {
@@ -54,12 +55,27 @@ class App extends React.Component {
     };
 
     render() {
-        console.log(this.state.fetchedUser)
         return (
-            <Root activeView={this.state.activeView} >
-                <EntranceView id="entrance" dataUser={this.state.fetchedUser} go={this.changeView} />
-                <VerifyView id="verify" dataUser={this.state.fetchedUser} />
-                <MainView id="main-view" dataUser={this.state.fetchedUser} />
+            <Root activeView={ this.state.activeView } >
+                <EntranceView
+                    id="entrance"
+                    dataUser={ this.state.fetchedUser }
+                    go={ this.changeView }
+                />
+                <VerifyView
+                    id="verify"
+                    dataUser={ this.state.fetchedUser }
+                    gow={ this.changeView }
+                />
+                <NewcardView
+                    id="newcard-view"
+                    dataUser={ this.state.fetchedUser }
+                    gow={ this.changeView }
+                />
+                <MainView
+                    id="main-view"
+                    dataUser={ this.state.fetchedUser }
+                />
             </Root>
         );
     }
