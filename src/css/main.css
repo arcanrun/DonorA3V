@@ -1,74 +1,3 @@
-#logo-icon {
-  width: 50px;
-  height: 50px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/dropplet.svg");
-  background-repeat: no-repeat;
-}
-#full-blood-icon {
-  height: 120px;
-  display: block;
-  background-position: center center;
-  background-size: 75px auto;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/full_blood.svg");
-  background-repeat: no-repeat;
-}
-#eritocites-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/eritocites.svg");
-  background-repeat: no-repeat;
-}
-#granulocites-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/granulocites.svg");
-  background-repeat: no-repeat;
-}
-#liekocites-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/liekocites.svg");
-  background-repeat: no-repeat;
-}
-#in-review-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/in_review.svg");
-  background-repeat: no-repeat;
-}
-#plazma-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/plazma.svg");
-  background-repeat: no-repeat;
-}
-#trombocites-icon {
-  width: 100px;
-  height: 100px;
-  display: block;
-  background-position: center center;
-  background-size: cover;
-  background-image: url("https://developer.donorsearch.org/design_elements/dropplets/trombocites.svg");
-  background-repeat: no-repeat;
-}
 html {
   height: 100%;
 }
@@ -77,12 +6,22 @@ body {
   margin: 0px;
   padding: 0px;
 }
-.blood {
+.header-logo {
   display: inline-block;
-  background-color: #3d70c1;
-  padding: 5px 10px;
-  color: #fff;
-  border-radius: 5px;
-  margin-left: 10px;
-  font-size: 12px;
+  margin-left: 0;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  vertical-align: top;
+  width: 1.5em;
+  height: calc(100% - 20px);
+  background: url("https://developer.donorsearch.org/dropplet.svg") no-repeat 50%/contain;
+  box-sizing: border-box;
+}
+.bg-entrance {
+  height: 180px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-image: linear-gradient(to left, rgba(255,255,255,0) 45%, rgba(255,255,255,0.6)), url("../img/bg-entrance.webp");
 }

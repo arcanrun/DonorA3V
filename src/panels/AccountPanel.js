@@ -1,5 +1,5 @@
 import React from "react";
-import { Panel, PanelHeader, Group, Cell, Button, Avatar, Div } from '@vkontakte/vkui';
+import { Panel, PanelHeader } from '@vkontakte/vkui';
 
 class AccountPanel extends React.Component {
     constructor(props) {

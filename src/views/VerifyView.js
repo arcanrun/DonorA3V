@@ -1,5 +1,4 @@
 import React from "react";
-import connect from "@vkontakte/vkui-connect";
 import "@vkontakte/vkui/dist/vkui.css";
 import { View } from "@vkontakte/vkui";
 

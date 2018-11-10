@@ -3,6 +3,8 @@
 @import "colors.styl"
 @import "icons.styl"
 
+icon = "https://developer.donorsearch.org/dropplet.svg"
+
 html
     height: 100%
 
@@ -11,11 +13,21 @@ body
     margin: 0px
     padding: 0px
 
-.blood
+.header-logo
     display: inline-block
-    background-color: blue-color
-    padding: 5px 10px
-    color: white
-    border-radius: 5px
-    margin-left: 10px
-    font-size: 12px
+    margin-left: 0
+    margin-top: 10px
+    margin-bottom: 10px
+    margin-right: 5px
+    vertical-align: top
+    width: 1.5em
+    height: calc(100% - 20px)
+    background: url(icon) no-repeat 50% / contain
+    box-sizing: border-box;
+
+.bg-entrance
+    height: 180px
+    background-size: cover
+    background-repeat: no-repeat
+    background-position: center center
+    background-image: linear-gradient(to left, rgba(255,255,255,0) 45%, rgba(255,255,255,.6)), url(../img/bg-entrance.webp)

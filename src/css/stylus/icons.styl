@@ -7,42 +7,6 @@ liekocites = "https://developer.donorsearch.org/design_elements/dropplets/liekoc
 in_review = "https://developer.donorsearch.org/design_elements/dropplets/in_review.svg"
 plazma = "https://developer.donorsearch.org/design_elements/dropplets/plazma.svg"
 trombocites = "https://developer.donorsearch.org/design_elements/dropplets/trombocites.svg"
-logo = "https://developer.donorsearch.org/dropplet.svg"
 
-blood-icon(icon, w = 100, h = 100)
-    width: unit(w, 'px')
-    height: unit(h, 'px')
-    display: block
-    background-position: center center
-    background-size: cover
-    background-image: url(icon)
-    background-repeat: no-repeat
-
-#logo-icon
-    blood-icon(logo, 50, 50)
-
-#full-blood-icon
-    height: 120px
-    display: block
-    background-position: center center
-    background-size: 75px auto
-    background-image: url(full_blood)
-    background-repeat: no-repeat
-
-#eritocites-icon
-    blood-icon(eritocites)
-
-#granulocites-icon
-    blood-icon(granulocites)
-
-#liekocites-icon
-    blood-icon(liekocites)
-
-#in-review-icon
-    blood-icon(in_review)
-
-#plazma-icon
-    blood-icon(plazma)
-
-#trombocites-icon
-    blood-icon(trombocites)
+blood-icon(icon)
+    background: url(icon) no-repeat 50% / contain

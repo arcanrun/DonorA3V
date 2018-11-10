@@ -4,7 +4,6 @@ import { View, Epic, Panel, Tabbar, TabbarItem, PanelHeader } from '@vkontakte/v
 import Icon28Favorite from '@vkontakte/icons/dist/28/favorite';
 import Icon28Place from '@vkontakte/icons/dist/28/place';
 import Icon28HelpOutline from '@vkontakte/icons/dist/28/help_outline';
-import Icon28Settings from '@vkontakte/icons/dist/28/settings';
 import Icon28Notifications from '@vkontakte/icons/dist/28/notifications';
 import Icon28User from '@vkontakte/icons/dist/28/user';
 
