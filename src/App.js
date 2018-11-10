@@ -1,6 +1,5 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
-import VKConnect from "@vkontakte/vkui-connect-mock";
 import "@vkontakte/vkui/dist/vkui.css";
 import { Root, View, Panel } from "@vkontakte/vkui";
 import Data3Panel from "./panels/Data3Panel";
@@ -14,8 +13,7 @@ class App extends React.Component {
     super(props);
 
     this.state = {
-      activeView: "entrance",
-      fetchedUser: null
+      activeView: "entrance"
     };
     this.changeView = this.changeView.bind(this);
   }
@@ -25,23 +23,6 @@ class App extends React.Component {
       activeView: view
     });
     console.log(this.state.activeView);
-  }
-
-  componentDidMount() {
-    VKConnect.subscribe(e => {
-      console.log(e);
-      switch (e.detail.type) {
-        case "VKWebAppGetUserInfoResult":
-          this.setState({ fetchedUser: e.detail.data });
-          break;
-        default:
-          console.log(this.state.fetchedUser);
-      }
-    });
-
-    VKConnect.send("VKWebAppGetUserInfo", {});
-
-    // console.log(this.state.fetchedUser);
   }
 
   render() {

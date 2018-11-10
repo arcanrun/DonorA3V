@@ -1,37 +1,59 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
+import VKConnect from "@vkontakte/vkui-connect-mock";
+
 import "@vkontakte/vkui/dist/vkui.css";
 import {
   Panel,
   PanelHeader,
   Avatar,
-  View,
   Group,
   Cell,
   Button,
   Div,
-  HeaderButton,
-  IOS,
-  osname,
   colors
 } from "@vkontakte/vkui";
-import logopos from "../css/logpopos";
-import Icon24Back from "@vkontakte/icons/dist/24/back";
-import Icon28ChevronBack from "@vkontakte/icons/dist/28/chevron_back";
+
 class VerifyPanel extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { fetchedUser: "changeit" };
+  }
+
+  componentDidMount() {
+    // this.setState({ fetchedUser: "e" });
+    console.log(this.state.fetchedUser);
+  }
+
+  componentWillMount() {
+    VKConnect.subscribe(e => {
+      switch (e.detail.type) {
+        case "VKWebAppGetUserInfoResult":
+          this.setState({ fetchedUser: e.detail.data });
+          break;
+        default:
+      }
+    });
+
+    VKConnect.send("VKWebAppGetUserInfo", {});
+    // console.log(this.state.test);
+  }
   render() {
+    if (!this.state.fetchedUser) {
+      this.props.go.bind(this, "regPanel");
+    }
+    const avatar_src = this.state.fetchedUser.photo_200;
+    const first_name = this.state.fetchedUser.first_name;
+    const last_name = this.state.fetchedUser.last_name;
+
     return (
       <Panel id={this.props.id}>
         <PanelHeader style={{ backgroundColor: colors.red_light }}>
           <span id="logo-icon" />
         </PanelHeader>
         <Group title="Подтверждение личности">
-          <Cell
-            before={
-              <Avatar src="https://pp.userapi.com/c845121/v845121950/63c02/4hP61FL56YM.jpg?ava=1" />
-            }
-          >
-            Тимофей Чаптыков
+          <Cell before={<Avatar src={avatar_src} />}>
+            {first_name + +last_name}
           </Cell>
           <Div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do

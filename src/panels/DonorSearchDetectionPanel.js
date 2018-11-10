@@ -14,7 +14,7 @@ import {
   Link,
   Button
 } from "@vkontakte/vkui";
-import logopos from "../css/logpopos";
+
 class DonorSearchDetectionPanel extends Component {
   render() {
     const osname = platform();
