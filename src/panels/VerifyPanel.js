@@ -9,15 +9,21 @@ import {
   Group,
   Cell,
   Button,
-  Div
+  Div,
+  HeaderButton,
+  IOS,
+  osname,
+  colors
 } from "@vkontakte/vkui";
 import logopos from "../css/logpopos";
+import Icon24Back from "@vkontakte/icons/dist/24/back";
+import Icon28ChevronBack from "@vkontakte/icons/dist/28/chevron_back";
 class VerifyPanel extends React.Component {
   render() {
     return (
       <Panel id={this.props.id}>
-        <PanelHeader>
-          <div style={logopos} id="logo-icon" />
+        <PanelHeader style={{ backgroundColor: colors.red_light }}>
+          <span id="logo-icon" />
         </PanelHeader>
         <Group title="Подтверждение личности">
           <Cell
@@ -45,7 +51,7 @@ class VerifyPanel extends React.Component {
                 size="l"
                 stretched
                 level="secondary"
-                onClick={this.props.go.bind(this, "donorSearchDetection")}
+                onClick={this.props.go.bind(this, "regPanel")}
               >
                 Изменить данные
               </Button>

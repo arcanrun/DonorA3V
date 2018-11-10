@@ -1,9 +1,23 @@
 import React from "react";
 import "@vkontakte/vkui/dist/vkui.css";
-import { View, Panel, PanelHeader, HeaderButton,osname,IOS,Link,Select,Button,FormLayout,Input,FormLayoutGroup,Textarea,Div} from '@vkontakte/vkui';
-import Icon24Back from '@vkontakte/icons/dist/24/back';
-import Icon24Search from '@vkontakte/icons/dist/24/search';
-import Icon28ChevronBack from '@vkontakte/icons/dist/28/chevron_back';
+import {
+  View,
+  Panel,
+  PanelHeader,
+  HeaderButton,
+  osname,
+  IOS,
+  Link,
+  Select,
+  Button,
+  FormLayout,
+  Input,
+  FormLayoutGroup,
+  Textarea,
+  Div
+} from "@vkontakte/vkui";
+import Icon24Back from "@vkontakte/icons/dist/24/back";
+import Icon28ChevronBack from "@vkontakte/icons/dist/28/chevron_back";
 
 class RegPanel extends React.Component {
   constructor(props) {
@@ -14,41 +28,43 @@ class RegPanel extends React.Component {
 
   render() {
     return (
-      <View id={this.props.id} activePanel="reg-panel">
-
-       
-        <Panel id="reg-panel">
-         <PanelHeader 
-          left={<HeaderButton>{osname === IOS ? <Icon28ChevronBack/> : <Icon24Back/>}</HeaderButton>}>LOGO</PanelHeader>
-          <div align="center">
+      <Panel id={this.props.id}>
+        <PanelHeader
+          left={
+            <HeaderButton onClick={this.props.go.bind(this, "verifypanel")}>
+              {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
+            </HeaderButton>
+          }
+        >
+          <span id="logo-icon" />
+        </PanelHeader>
+        <div align="center">
           <h4 align="center">Ввведите ваши личные данные:</h4>
-          </div>
-          <Select top="Пол" placeholder="Выберите пол">
-        <option value="m">Мужской</option>
-        <option value="f">Женский</option>
-      </Select>
+        </div>
+        <Select top="Пол" placeholder="Выберите пол">
+          <option value="m">Мужской</option>
+          <option value="f">Женский</option>
+        </Select>
 
-
-              <FormLayout>
+        <FormLayout>
           <Input type="name" top="Фамилия" placeholder="Иванов" />
-          <FormLayoutGroup top="Имя" >
-            <Input type="name"  placeholder="Иван" />
+          <FormLayoutGroup top="Имя">
+            <Input type="name" placeholder="Иван" />
           </FormLayoutGroup>
-            <FormLayoutGroup top="Отчество" >
-            <Input type="name"  placeholder="Иванович" />
+          <FormLayoutGroup top="Отчество">
+            <Input type="name" placeholder="Иванович" />
           </FormLayoutGroup>
 
-          <Input type="number" top="Мобильный телефон" placeholder="+7__ - ____-___" />
-          
-           <Button align="center">Отправить</Button>
-         
-          
+          <Input
+            type="number"
+            top="Мобильный телефон"
+            placeholder="+7__ - ____-___"
+          />
+
+          <Button align="center">Отправить</Button>
         </FormLayout>
-          
-          
-        </Panel>
-      </View>
-      );
+      </Panel>
+    );
   }
 }
 

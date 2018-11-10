@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import connect from "@vkontakte/vkui-connect";
 import Icon24Back from "@vkontakte/icons/dist/24/back";
+import Icon28ChevronBack from "@vkontakte/icons/dist/28/chevron_back";
 import "@vkontakte/vkui/dist/vkui.css";
 import {
   Panel,
@@ -23,11 +24,11 @@ class DonorSearchDetectionPanel extends Component {
         <PanelHeader
           left={
             <HeaderButton onClick={this.props.go.bind(this, "verifypanel")}>
-              <Icon24Back />
+              {osname === IOS ? <Icon28ChevronBack /> : <Icon24Back />}
             </HeaderButton>
           }
         >
-          <div style={logopos} id="logo-icon" />
+          <span id="logo-icon" />
         </PanelHeader>
         <Group>
           <Div>
