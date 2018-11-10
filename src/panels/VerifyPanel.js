@@ -21,7 +21,7 @@ class VerifyPanel extends React.Component {
   }
 
   componentDidMount() {
-    // this.setState({ fetchedUser: "e" });
+    this.setState({ fetchedUser: this.state.fetchedUser });
     console.log(this.state.fetchedUser);
   }
 
@@ -39,12 +39,38 @@ class VerifyPanel extends React.Component {
     // console.log(this.state.test);
   }
   render() {
+    // this.setState({ fetchedUser: null });
+    // console.log(this.state.fetchedUser);
+    // console.log("---" + !this.state.fetchedUser);
     if (!this.state.fetchedUser) {
-      this.props.go.bind(this, "regPanel");
+      return (
+        <Panel id={this.props.id}>
+          <PanelHeader style={{ backgroundColor: colors.red_light }}>
+            <span id="logo-icon" />
+          </PanelHeader>
+          <Group title="Подтверждение личности">
+            <Div>
+              К сожалению, мы не смогли вас распознать. Авторизуйтесь, чтобы
+              продолжить
+            </Div>
+            <Div>
+              <Div style={{ display: "flex" }}>
+                <Button
+                  size="l"
+                  stretched
+                  style={{ marginRight: 8 }}
+                  onClick={this.props.go.bind(this, "regPanel")}
+                >
+                  Авторизоваться
+                </Button>
+              </Div>
+            </Div>
+          </Group>
+        </Panel>
+      );
     }
     const avatar_src = this.state.fetchedUser.photo_200;
     const first_name = this.state.fetchedUser.first_name;
-    const last_name = this.state.fetchedUser.last_name;
 
     return (
       <Panel id={this.props.id}>
@@ -52,9 +78,7 @@ class VerifyPanel extends React.Component {
           <span id="logo-icon" />
         </PanelHeader>
         <Group title="Подтверждение личности">
-          <Cell before={<Avatar src={avatar_src} />}>
-            {first_name + +last_name}
-          </Cell>
+          <Cell before={<Avatar src={avatar_src} />}>{first_name}</Cell>
           <Div>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt ut labore et dolore magna aliqua.
