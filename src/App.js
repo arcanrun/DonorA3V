@@ -1,48 +1,52 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
+import VKConnect from "@vkontakte/vkui-connect-mock";
 import "@vkontakte/vkui/dist/vkui.css";
 import { Root } from "@vkontakte/vkui";
 
 import VerifyView from "./views/VerifyView";
+import EntranceView from "./views/EnrtranceView";
 import "./css/main.css";
-
 class App extends React.Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      activePanel: "login",
+      activeView: "entrance",
       fetchedUser: null
     };
+    this.changeView = this.changeView.bind(this);
   }
 
-  pagination(page) {
+  changeView(view) {
     this.setState({
-      activePanel: page
+      activeView: view
     });
-    console.log(this.state.activePanel);
+    console.log(this.state.activeView);
   }
 
   componentDidMount() {
-    connect.subscribe(e => {
+    VKConnect.subscribe(e => {
+      console.log(e);
       switch (e.detail.type) {
         case "VKWebAppGetUserInfoResult":
           this.setState({ fetchedUser: e.detail.data });
           break;
         default:
-          console.log(e.detail.type);
+          console.log(this.state.fetchedUser);
       }
     });
-    connect.send("VKWebAppGetUserInfo", {});
+
+    VKConnect.send("VKWebAppGetUserInfo", {});
+
+    // console.log(this.state.fetchedUser);
   }
 
-  go = e => {
-    this.setState({ activePanel: e.currentTarget.dataset.to });
-  };
   render() {
     return (
-      <Root activeView="verify">
+      <Root activeView={this.state.activeView}>
         <VerifyView id="verify" />
+        <EntranceView id="entrance" go={this.changeView} />
       </Root>
     );
   }
