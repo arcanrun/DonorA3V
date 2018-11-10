@@ -5,6 +5,7 @@ import { View } from "@vkontakte/vkui";
 
 import VerifyPanel from "../panels/VerifyPanel";
 import DonorSearchDetectionPanel from "../panels/DonorSearchDetectionPanel";
+import RegPanel from "../panels/RegPanel";
 
 class VerifyView extends React.Component {
   constructor(props) {
@@ -27,6 +28,7 @@ class VerifyView extends React.Component {
           id="donorSearchDetection"
           go={this.changePanel}
         />
+        <RegPanel id="regPanel" go={this.changePanel} />
       </View>
     );
   }
