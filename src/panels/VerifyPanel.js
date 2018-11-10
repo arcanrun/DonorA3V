@@ -1,6 +1,5 @@
 import React from "react";
 import connect from "@vkontakte/vkui-connect";
-
 import "@vkontakte/vkui/dist/vkui.css";
 import {
   Panel,
@@ -12,12 +11,14 @@ import {
   Button,
   Div
 } from "@vkontakte/vkui";
-
+import logopos from "../css/logpopos";
 class VerifyPanel extends React.Component {
   render() {
     return (
       <Panel id={this.props.id}>
-        <PanelHeader>LOGO</PanelHeader>
+        <PanelHeader>
+          <div style={logopos} id="logo-icon" />
+        </PanelHeader>
         <Group title="Подтверждение личности">
           <Cell
             before={

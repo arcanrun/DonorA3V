@@ -9,7 +9,7 @@ import DonorSearchDetectionPanel from "../panels/DonorSearchDetectionPanel";
 class VerifyView extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { activePanel: "donorSearchDetection" };
+    this.state = { activePanel: "verifypanel" };
 
     this.changePanel = this.changePanel.bind(this);
   }

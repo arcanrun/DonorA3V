@@ -13,7 +13,7 @@ import {
   Link,
   Button
 } from "@vkontakte/vkui";
-
+import logopos from "../css/logpopos";
 class DonorSearchDetectionPanel extends Component {
   render() {
     const osname = platform();
@@ -27,7 +27,7 @@ class DonorSearchDetectionPanel extends Component {
             </HeaderButton>
           }
         >
-          LOGO
+          <div style={logopos} id="logo-icon" />
         </PanelHeader>
         <Group>
           <Div>
