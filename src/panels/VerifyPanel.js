@@ -79,10 +79,7 @@ class VerifyPanel extends React.Component {
         </PanelHeader>
         <Group title="Подтверждение личности">
           <Cell before={<Avatar src={avatar_src} />}>{first_name}</Cell>
-          <Div>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
-          </Div>
+          <Div>Подвердите что это вы, для дальнейшей работы</Div>
           <Div>
             <Div style={{ display: "flex" }}>
               <Button
