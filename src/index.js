@@ -1,41 +1,29 @@
-// import "core-js/es6/map";
-// import "core-js/es6/set";
-
+import "core-js/es6/map";
+import "core-js/es6/set";
 import React from "react";
 import ReactDOM from "react-dom";
-import {applyMiddleware, createStore} from 'redux';
-import {Provider} from 'react-redux';
-import {Route} from 'react-router';
-import {createHashHistory} from 'history';
-import {ConnectedRouter, routerMiddleware} from 'react-router-redux';
-import thunk from 'redux-thunk';
-import {rootReducer} from './store/reducers';
-import registerServiceWorker from './registerServiceWorker';
-import App from './containers/App';
+import connect from "@vkontakte/vkui-connect";
+import App from "./App";
+import registerServiceWorker from "./sw";
 
-const history = createHashHistory({
-    hashType: 'noslash'
+connect.subscribe(e => {
+    switch (e.detail.type) {
+        case "VKWebAppInitResult":
+            console.log(e.detail);
+            break;
+        case "VKWebAppAccessTokenReceived":
+            console.log(e.detail);
+            break;
+        default:
+            console.log(e.detail);
+    }
 });
 
-const logger = store => next => action => {
-    console.log('dispatching', action);
-    return next(action);
-};
+// Init VK App
+connect.send("VKWebAppInit", {});
+connect.send("VKWebAppGetAuthToken", {"app_id": 6746932, "scope": "notify,email"});
 
-const store = createStore(
-    rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
-    applyMiddleware(thunk, routerMiddleware(history), logger)
-);
-
-ReactDOM.render(
-    <Provider store={store}>
-        <ConnectedRouter history={history}>
-            <div>
-                <Route path='/:pageId(about|)?' component={(props) => <App pageId={props.match.params.pageId}/>}/>
-            </div>
-        </ConnectedRouter>
-    </Provider>,
-    document.getElementById('root')
-);
-
+// Service Worker For Cache
 registerServiceWorker();
+
+ReactDOM.render(<App/>, document.getElementById('root'));
