@@ -22,6 +22,8 @@ class App extends Component {
         // Если уже входили в приложение
         let activeView = this.props.insets ? 'main' : 'entrance';
 
+        console.log(this.props);
+
         return (
             <UI.ConfigProvider insets={this.props.insets} isWebView={isWebView}>
                 <UI.Root activeView={activeView}>
