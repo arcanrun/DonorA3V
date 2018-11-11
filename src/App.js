@@ -1,7 +1,6 @@
 ﻿import React from "react";
 
-//import VKConnect from '@vkontakte/vkui-connect-mock';
-import VKConnect from '@vkontakte/vkui-connect';
+import VKConnect from '@vkontakte/vkui-connect-mock';
 
 import "@vkontakte/vkui/dist/vkui.css";
 import "./css/main.css";
