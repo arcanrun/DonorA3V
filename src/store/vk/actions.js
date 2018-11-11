@@ -9,7 +9,7 @@ export function fetchAccessToken() {
     }
 }
 
-export function userData() {
+export function userInfo() {
     return async () => {
         VKConnect.send('VKWebAppGetUserInfo', {});
     }
@@ -84,7 +84,7 @@ export function initApp() {
                 case 'VKWebAppGetUserInfoResult':
                     dispatch({
                         type: types.VK_GET_USER_INFO_FETCHED,
-                        userData: data
+                        userInfo: data
                     });
                     break;
 

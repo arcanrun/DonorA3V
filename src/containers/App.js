@@ -14,8 +14,8 @@ class App extends Component {
 
     componentWillMount() {
         this.props.dispatch(vkActions.initApp());
-        this.props.dispatch(vkActions.userData());
         this.props.dispatch(vkActions.fetchAccessToken());
+        this.props.dispatch(vkActions.userInfo());
     }
 
     render() {
@@ -25,7 +25,7 @@ class App extends Component {
         return (
             <UI.ConfigProvider insets={this.props.insets} isWebView={isWebView}>
                 <UI.Root activeView={activeView}>
-                    <EntranceView id="entrance" firstName={this.props.userData.first_name}/>
+                    <EntranceView id="entrance" firstName={this.props.userInfo.first_name}/>
                     <VerifyView id="verify" accessToken={this.props.accessToken}/>
                     <MainView id="main" accessToken={this.props.accessToken}/>
                 </UI.Root>
@@ -37,7 +37,7 @@ class App extends Component {
 function mapStateToProps(state) {
     return {
         accessToken: vkSelectors.getAccessToken(state),
-        userData: vkSelectors.getUserData(state),
+        userInfo: vkSelectors.getUserInfo(state),
         insets: vkSelectors.getInsets(state),
     };
 }

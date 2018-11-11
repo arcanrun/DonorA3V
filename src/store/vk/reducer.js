@@ -13,7 +13,7 @@ export default function reduce(state = initialState, action = {}) {
             });
         case types.VK_GET_USER_INFO_FETCHED:
             return state.merge({
-                userData: action.userData
+                userInfo: action.userInfo
             });
         case types.VK_NOTIFICATION_STATUS_FETCHED:
             return state.merge({
@@ -48,8 +48,8 @@ export function getNotificationStatus(state) {
     return state.vk.notificationStatus;
 }
 
-export function getUserData(state) {
-    return state.vk.userData;
+export function getUserInfo(state) {
+    return state.vk.userInfo;
 }
 
 export function getInsets(state) {
