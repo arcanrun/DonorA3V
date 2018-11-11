@@ -16,7 +16,7 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            activeView: "main-view",
+            activeView: "entrance-view",
             fetchedUser: null
         };
 
