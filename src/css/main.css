@@ -37,6 +37,9 @@ body {
 .TabbarItem--selected {
   color: #cf3a42 !important;
 }
+.HeaderButton--android .Icon--24 {
+  padding: 0 !important;
+}
 .TabbarItem__label {
   background: #3d70c1 !important;
 }
