@@ -1,6 +1,6 @@
 ﻿import React from "react";
 
-import VKConnect from '@vkontakte/vkui-connect-mock';
+import VKConnect from '@vkontakte/vkui-connect';
 
 import "@vkontakte/vkui/dist/vkui.css";
 import "./css/main.css";
@@ -16,7 +16,6 @@ class App extends React.Component {
         super(props);
 
         this.state = {
-            // activeView: "entrance-view",
             activeView: "main-view",
             fetchedUser: null
         };
