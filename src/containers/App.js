@@ -22,12 +22,10 @@ class App extends Component {
         // Если уже входили в приложение
         let activeView = this.props.insets ? 'main' : 'entrance';
 
-        console.log(this.props);
-
         return (
             <UI.ConfigProvider insets={this.props.insets} isWebView={isWebView}>
                 <UI.Root activeView={activeView}>
-                    <EntranceView id="entrance" firstName={this.props.userInfo.first_name}/>
+                    <EntranceView id="entrance" userInfo={this.props.userInfo}/>
                     <VerifyView id="verify" accessToken={this.props.accessToken}/>
                     <MainView id="main" accessToken={this.props.accessToken}/>
                 </UI.Root>

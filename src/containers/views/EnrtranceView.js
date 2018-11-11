@@ -46,9 +46,11 @@ class EntranceView extends Component {
     }
 
     renderEntranceContent() {
+        console.log(this.props.userInfo);
+
         if (this.state.isEntranceAbout) {
             const {firstName} = this.props;
-            
+
             return (<div className="bg-entrance" />) && (
                 <UI.Div>
                     <h3 style={{ marginTop: "5px" }}>
