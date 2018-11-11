@@ -35,9 +35,6 @@ class App extends React.Component {
                 case "VKWebAppGetUserInfoResult":
                     this.setState({ fetchedUser: e.detail.data });
                     break;
-                case "VKWebAppAccessTokenReceived":
-                    console.log(e.detail.data);
-                    break;
                 default:
                     console.log(e.detail);
             }
@@ -53,26 +50,25 @@ class App extends React.Component {
     render() {
         return (
             <Root activeView={ this.state.activeView } >
-
+                <EntranceView
+                    id="entrance-view"
+                    dataUser={ this.state.fetchedUser }
+                    pagination={ this.pagination }
+                />
+                <VerifyView
+                    id="verify-view"
+                    dataUser={ this.state.fetchedUser }
+                    pagination={ this.pagination }
+                />
+                <MainView
+                    id="main-view"
+                    dataUser={ this.state.fetchedUser }
+                    pagination={ this.pagination }
+                />
             </Root>
         );
     }
 }
 
-// <EntranceView
-//     id="entrance-view"
-//     dataUser={ this.state.fetchedUser }
-//     pagination={ this.pagination }
-// />
-// <VerifyView
-//     id="verify-view"
-//     dataUser={ this.state.fetchedUser }
-//     pagination={ this.pagination }
-// />
-// <MainView
-//     id="main-view"
-//     dataUser={ this.state.fetchedUser }
-//     pagination={ this.pagination }
-// />
 
 export default App;
