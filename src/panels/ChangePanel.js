@@ -1,6 +1,7 @@
 import React from "react";
 
-import VKConnect from '@vkontakte/vkui-connect-mock';
+//import VKConnect from '@vkontakte/vkui-connect-mock';
+import VKConnect from '@vkontakte/vkui-connect';
 
 import { Panel, PanelHeader, HeaderButton, osname, IOS, Select, Button, FormLayout,
          Input } from "@vkontakte/vkui";

@@ -1,12 +1,29 @@
 import React from "react";
 
-import { View, Panel, PanelHeader, Button, Div } from "@vkontakte/vkui";
+import { View, Panel, PanelHeader, Button, Div, Gallery, colors } from "@vkontakte/vkui";
 
 class EntranceView extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            activePanel: "entrance-panel"
+        };
+
+        this.next = this.next.bind(this);
+    }
+
+    next(panel) {
+        this.setState({
+            prevPanel: this.state.activePanel,
+            activePanel: panel
+        });
+    }
+
     render() {
         return (
-            <View id={this.props.id} activePanel="entrancePanel">
-                <Panel id="entrancePanel" theme="white">
+            <View id={this.props.id} activePanel={ this.state.activePanel }>
+                <Panel id="entrance-panel" theme="white">
                     <PanelHeader theme="light">
                         <div className="header-logo"></div>
                         <b>DonorSearch</b>
@@ -28,10 +45,73 @@ class EntranceView extends React.Component {
                         <Button
                             style={{ marginTop: "15px" }}
                             size="xl"
-                            onClick={this.props.pagination.bind(this, "verify-view")}>
+                            onClick={this.next.bind(this, "how-panel")}>
                             Вперёд!
                         </Button>
                     </Div>
+                </Panel>
+                <Panel id="how-panel" theme="white">
+                    <PanelHeader theme="light">
+                        <div className="header-logo"></div>
+                        <b>Как это работает?</b>
+                    </PanelHeader>
+                    <Gallery
+                        style={{ height: window.innerHeight - 56 }}
+                        bullets="dark"
+                    >
+                        <div style={{ height: window.innerHeight - 56 }}>
+                            <div className="how1-image"></div>
+                            <Div className="how-text">
+                                Сдавайте кровь или компоненты в центрах крови
+                            </Div>
+                            <Div style={{ display: "flex" }}>
+                                <Button
+                                    size="xl"
+                                    streched
+                                    onClick={this.props.pagination.bind(this, "verify-view")}
+                                    level="tertiary">Пропустить</Button>
+                            </Div>
+                        </div>
+                        <div style={{ height: window.innerHeight - 56 }}>
+                            <div className="how2-image"></div>
+                            <Div className="how-text">
+                                Фотографируйте полученные справки о своих донациях
+                            </Div>
+                            <Div style={{ display: "flex" }}>
+                                <Button
+                                    size="xl"
+                                    streched
+                                    onClick={this.props.pagination.bind(this, "verify-view")}
+                                    level="tertiary">Пропустить</Button>
+                            </Div>
+                        </div>
+                        <div style={{ height: window.innerHeight - 56 }}>
+                            <div className="how3-image"></div>
+                            <Div className="how-text">
+                                Добавляйте фотографии справок в приложении или на сайте donorsearch.org
+                            </Div>
+                            <Div style={{ display: "flex" }}>
+                                <Button
+                                    size="xl"
+                                    streched
+                                    onClick={this.props.pagination.bind(this, "verify-view")}
+                                    level="tertiary">Пропустить</Button>
+                            </Div>
+                        </div>
+                        <div style={{ height: window.innerHeight - 56 }}>
+                            <div className="how4-image"></div>
+                            <Div className="how-text">
+                                Получайте награды и развивайте свой донорский профиль
+                            </Div>
+                            <Div style={{ display: "flex" }}>
+                                <Button
+                                    size="xl"
+                                    streched
+                                    onClick={this.props.pagination.bind(this, "verify-view")}
+                                    level="commerce">Понятно</Button>
+                            </Div>
+                        </div>
+                    </Gallery>
                 </Panel>
             </View>
         );

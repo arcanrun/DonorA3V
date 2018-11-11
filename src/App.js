@@ -1,6 +1,7 @@
 ﻿import React from "react";
 
-import VKConnect from '@vkontakte/vkui-connect-mock';
+//import VKConnect from '@vkontakte/vkui-connect-mock';
+import VKConnect from '@vkontakte/vkui-connect';
 
 import "@vkontakte/vkui/dist/vkui.css";
 import "./css/main.css";
@@ -21,6 +22,18 @@ class App extends React.Component {
         };
 
         this.pagination = this.pagination.bind(this);
+
+        parseQueryString = (string) => {
+            return string.slice(1).split('&')
+                .map((queryParam) => {
+                    let kvp = queryParam.split('=');
+                    return {key: kvp[0], value: kvp[1]}
+                })
+                .reduce((query, kvp) => {
+                    query[kvp.key] = kvp.value;
+                    return query
+                }, {})
+        };
     }
 
     pagination(view) {
@@ -48,6 +61,8 @@ class App extends React.Component {
     };
 
     render() {
+        const paresedQuery = this.parseQueryString(window.location.search);
+
         return (
             <Root activeView={ this.state.activeView } >
                 <EntranceView

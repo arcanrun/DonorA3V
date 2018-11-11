@@ -52,7 +52,7 @@ class MapPanel extends React.Component {
                 clusterCaption: '<strong>' + title + '</strong>',
                 balloonContentBody: '<strong>' + title + '</strong>' +
                     '<strong>' + worktime + '</strong>' +
-                    '<button type="default" role="button" class="Tappable Tappable--android Button Button--android Button--sz-m Button--lvl-primary Button--aln-center Button--str Tappable--inactive">' +
+                    '<button onClick="window.open("https://vk.com/im?sel=-173756271");" type="default" role="button" class="Tappable Tappable--android Button Button--android Button--sz-m Button--lvl-primary Button--aln-center Button--str Tappable--inactive">' +
                     '<span class="Tappable__waves"></span>' +
                     '<div class="Button__in"><div class="Button__content">Записаться</div></div></button>',
             };
