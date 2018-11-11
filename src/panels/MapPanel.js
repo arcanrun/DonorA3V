@@ -3,6 +3,8 @@ import React from "react";
 import { Panel, PanelHeader } from '@vkontakte/vkui';
 import { YMaps, Map, Clusterer, Placemark, ListBox, ListBoxItem, RouteButton, GeolocationControl } from 'react-yandex-maps';
 
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 import db from "../db.js"
 
 class MapPanel extends React.Component {
