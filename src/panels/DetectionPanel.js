@@ -20,6 +20,7 @@ class DetectionPanel extends React.Component {
                     <Div style={{ display: "flex" }}>
                         <Button
                             size="xl"
+                            onClick={ this.props.pagination.bind(this, "main-view") }
                         >Объединить данные</Button>
                     </Div>
                 </Group>

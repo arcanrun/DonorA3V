@@ -43,3 +43,17 @@ body {
 .TabbarItem__label {
   background: #3d70c1 !important;
 }
+.imdonor-image {
+  width: 141px;
+  height: 128px;
+  margin: 0 auto;
+  display: block;
+  background: url("https://donorsearch.org/assets/index/want-to-2.341a4376-46eeadff198aa2076558355fb29cc069675e198f35ff8e205fd024e6f14a7b93.svg") no-repeat 50%/contain;
+}
+.iwdonor-image {
+  width: 141px;
+  height: 128px;
+  margin: 0 auto;
+  display: block;
+  background: url("https://donorsearch.org/assets/index/want-to-1.6197ed02-e62ea6d9fd7e0c38d88f67b50002ada7404278c91371e2b3bcd15a2d58e133f7.svg") no-repeat 50%/contain;
+}

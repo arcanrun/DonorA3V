@@ -7,6 +7,8 @@ import DetectionPanel from "../panels/DetectionPanel";
 import ChangePanel from "../panels/ChangePanel";
 import IsDonorPanel from "../panels/IsDonorPanel";
 import Data1Panel from "../panels/Data1Panel";
+import Data2Panel from "../panels/Data2Panel";
+import Data3Panel from "../panels/Data3Panel";
 
 class VerifyView extends React.Component {
     constructor(props) {
@@ -50,6 +52,7 @@ class VerifyView extends React.Component {
                 />
                 <DetectionPanel
                     id="detection-panel"
+                    pagination={ this.props.pagination }
                     dataUser={ this.props.dataUser }
                 />
                 <IsDonorPanel
@@ -61,6 +64,16 @@ class VerifyView extends React.Component {
                     id="carddata-panel"
                     back={ this.back }
                     next={ this.next }
+                />
+                <Data2Panel
+                    id="carddata2-panel"
+                    back={ this.back }
+                    next={ this.next }
+                />
+                <Data3Panel
+                    id="carddata3-panel"
+                    back={ this.back }
+                    pagination={ this.props.pagination }
                 />
             </View>
         );

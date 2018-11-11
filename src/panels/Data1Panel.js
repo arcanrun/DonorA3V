@@ -20,7 +20,7 @@ class Data1Panel extends React.Component {
                     }
                     theme="light"
                 >
-                    Карточка донора
+                    Личные данные
                 </PanelHeader>
                 <FormLayout>
                     <Select top="Пол" placeholder="Выберите пол">
@@ -33,7 +33,10 @@ class Data1Panel extends React.Component {
                     <Input type="text" top="Дата рождения" placeholder="хх.хх.хххх" />
                     <Input type="text" top="Город" placeholder="" />
                     <Textarea top="О себе" placeholder="" />
-                    <Button size="xl">Далее</Button>
+                    <Button
+                        onClick={ this.props.next.bind(this, "carddata2-panel") }
+                        size="xl"
+                    >Далее</Button>
                 </FormLayout>
             </Panel>
         );
