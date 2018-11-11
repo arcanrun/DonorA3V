@@ -8,7 +8,7 @@ import Icon28Notifications from '@vkontakte/icons/dist/28/notifications';
 import Icon28User from '@vkontakte/icons/dist/28/user';
 
 import MapPanel from "../panels/MapPanel"
-import AccountPanel from "../panels/AccountPanel"
+import UserPanel from "../panels/UserPanel"
 
 import db from "../db.js"
 
@@ -79,7 +79,7 @@ class MapView extends React.Component {
                     </Panel>
                 </View>
                 <View id="account" activePanel="account">
-                    <AccountPanel id="account" />
+                    <UserPanel id="account" />
                 </View>
             </Epic>
         );
