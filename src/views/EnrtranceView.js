@@ -1,6 +1,6 @@
 import React from "react";
 
-import { View, Panel, PanelHeader, Button, Div, Gallery, colors } from "@vkontakte/vkui";
+import { View, Panel, PanelHeader, Button, Div, Gallery } from "@vkontakte/vkui";
 
 class EntranceView extends React.Component {
     constructor(props) {
