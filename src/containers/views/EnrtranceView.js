@@ -49,7 +49,7 @@ class EntranceView extends Component {
         console.log(this.props.userInfo);
 
         if (this.state.isEntranceAbout) {
-            const {firstName} = this.props;
+            const {firstName} = this.props.userInfo;
 
             return (<div className="bg-entrance" />) && (
                 <UI.Div>
